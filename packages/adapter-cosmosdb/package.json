@@ -40,7 +40,7 @@
     "test:partitionkey-dataType": "TESTMODE=DT vitest run -c ../utils/vitest.config.ts",
     "test:partitionkey-hardcoded": "TESTMODE=HC vitest run -c ../utils/vitest.config.ts",
     "test:all": "pnpm test:no-partitionkey && pnpm test:partitionkey-id && pnpm test:partitionkey-dataType && pnpm test:partitionkey-hardcoded",
-    "test": "./test/test.sh",
+    "test": "ls -l && ls -l test && ./test/test.sh",
     "build": "tsc",
     "dev": "tsc -w"
   },
