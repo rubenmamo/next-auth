@@ -33,21 +33,21 @@ let pc: CosmosDbPartitionConfiguration | undefined = undefined
 
 switch (testMode) {
   case "ID":
-    console.log('Using Same As Id Partition Strategy')
+    console.log("Using Same As Id Partition Strategy")
     pc = {
       partitionKey: "partition",
       partitionKeyStrategy: CosmosDbPartitionStrategy.SameAsId,
     } as CosmosDbPartitionConfiguration
     break
   case "DT":
-    console.log('Using Same As Data Type Partition Strategy')
+    console.log("Using Same As Data Type Partition Strategy")
     pc = {
       partitionKey: "partition",
       partitionKeyStrategy: CosmosDbPartitionStrategy.SameAsDataType,
     } as CosmosDbPartitionConfiguration
     break
   case "HC":
-    console.log('Using Hardcoded Partition Strategy')
+    console.log("Using Hardcoded Partition Strategy")
     pc = {
       partitionKey: "partition",
       partitionKeyStrategy: CosmosDbPartitionStrategy.HardCodedValue,
@@ -55,7 +55,7 @@ switch (testMode) {
     } as CosmosDbPartitionConfiguration
     break
   default:
-    console.log('Using no Partition Strategy')
+    console.log("Using no Partition Strategy")
     break
 }
 
