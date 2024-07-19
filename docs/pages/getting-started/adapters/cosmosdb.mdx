@@ -34,6 +34,7 @@ AUTH_COSMOSDB_KEY=longRandomKey
 ### Partition Key Strategies
 
 The adapter supports 4 different approaches to partiion keys:
+
 1. Default Strategy - Assumes that the partition key is one of the columns included in the data. For e.g. you can use this if you have the partition key set to the Id column.
 2. Same As Id Strategy - Populates a separate column with the same value of the Id of the record.
 3. Same As Data Type Strategy - Populates a separate column with the same value of the Data Type of the record.
@@ -42,32 +43,36 @@ The adapter supports 4 different approaches to partiion keys:
 The strategies are configured as follows:
 
 #### Default Strategy
+
 ```
 const adapter = CosmosDbAdapter(container)
 ```
 
 #### Same As Id Strategy
+
 ```
 const pc = {
-  partitionKey: "partitionKeyColumnName", 
+  partitionKey: "partitionKeyColumnName",
   partitionKeyStrategy: CosmosDbPartitionStrategy.SameAsId,
 } as CosmosDbPartitionConfiguration
 const adapter = CosmosDbAdapter(container, pc)
 ```
 
 #### Same As Data Type Strategy
+
 ```
 const pc = {
-  partitionKey: "partitionKeyColumnName", 
+  partitionKey: "partitionKeyColumnName",
   partitionKeyStrategy: CosmosDbPartitionStrategy.SameAsDataType,
 } as CosmosDbPartitionConfiguration
 const adapter = CosmosDbAdapter(container, pc)
 ```
 
 #### Hardcoded Value Strategy
+
 ```
 const pc = {
-  partitionKey: "partitionKeyColumnName", 
+  partitionKey: "partitionKeyColumnName",
   partitionKeyStrategy: CosmosDbPartitionStrategy.HardCodedValue,
   hardCodedValue: "HardcodedPartitionKeyValue",
 } as CosmosDbPartitionConfiguration
