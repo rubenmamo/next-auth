@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "starting cosmos script"
 
 CONTAINER_NAME=authjs-azure-cosmosdb-test
 
@@ -10,8 +11,8 @@ docker run \
     --detach \
     mcr.microsoft.com/cosmosdb/linux/azure-cosmos-emulator:latest   
 
-echo "Waiting 10s for db to start..."
-sleep 10
+echo "Waiting 240s for db to start..."
+sleep 240
 
 
 TESTMODE=NOPK
